@@ -3,463 +3,10 @@ import { useParams, Link, Navigate } from "react-router-dom";
 import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
 import Button from "../components/Button";
+import servicesData from "../helpers/servicesData";
 
 const ServiceDetail = () => {
   const { slug } = useParams();
-
-  // All service data in one object
-  const servicesData = {
-    "ai-lead-generation": {
-      serviceName: "AI Lead Generation & Growth Marketing",
-      badge: "AI Lead Generation & Growth Marketing",
-      tagline: (
-        <>
-          Leads That <span className="text-primary">Convert</span> – Not Just
-          Traffic
-        </>
-      ),
-      description: (
-        <>
-          In 2026, traffic is easy. Conversion is not. <br />
-          Most businesses are running ads, posting content, and hoping something
-          works. But hope is not a strategy.
-        </>
-      ),
-      heroImage: null,
-      features: [
-        {
-          icon: "person_search",
-          title: "Identify high-intent audiences",
-          description:
-            "AI-powered targeting that finds people actively searching for solutions like yours.",
-        },
-        {
-          icon: "ads_click",
-          title: "Engage with precision targeting",
-          description:
-            "Reach the right people at the right time with messaging that resonates.",
-        },
-        {
-          icon: "verified",
-          title: "Qualify them automatically",
-          description:
-            "Intelligent scoring separates ready-to-buy leads from browsers.",
-        },
-        {
-          icon: "route",
-          title: "Route to your team ready to convert",
-          description:
-            "Pre-qualified leads delivered directly to your sales team with full context.",
-        },
-      ],
-      whatWeOffer: {
-        title: "What Makes Us Different?",
-        subtitle: "We don't just 'run ads.' We build an integrated system:",
-        items: [
-          "AI-assisted Google & Meta campaigns",
-          "Conversion-optimised landing funnels",
-          "Lead scoring & behaviour tracking",
-          "Automated follow-up sequences",
-          "CRM integration",
-          "Revenue attribution tracking",
-        ],
-      },
-      forWhom: [
-        {
-          title: "For healthcare providers, this means:",
-          points: [
-            "Fewer unqualified enquiries",
-            "Faster patient or staff acquisition",
-            "Measurable ROI",
-          ],
-        },
-        {
-          title: "For service businesses:",
-          points: [
-            "Predictable lead flow",
-            "Automated follow-ups",
-            "Higher close rates",
-          ],
-        },
-      ],
-      primaryCTA: "Get More Qualified Leads",
-    },
-
-    "ai-automation": {
-      serviceName: "AI Automation & CRM Systems",
-      badge: "AI Automation & CRM Systems",
-      tagline: (
-        <>
-          Stop Managing Tasks.{" "}
-          <span className="text-primary">Start Running a System</span>.
-        </>
-      ),
-      description:
-        "In UK healthcare and service sectors, the biggest challenge in 2026 is  not demand — it's operational overload.",
-      heroImage: null,
-      features: [
-        {
-          icon: "autorenew",
-          title: "End-to-end enquiry automation",
-          description:
-            "Automatically capture, respond to, nurture, and convert enquiries without manual follow-up.",
-        },
-        {
-          icon: "event_available",
-          title: "Automated appointment booking",
-          description:
-            "Enable clients to view real-time availability and schedule appointments instantly.",
-        },
-        {
-          icon: "device_hub",
-          title: "CRM pipeline design",
-          description:
-            "Custom-built sales pipelines that track, organise, and optimise every opportunity.",
-        },
-        {
-          icon: "person_add_alt_1",
-          title: "Staff onboarding workflows",
-          description:
-            "Automate contracts, document collection, task assignments, and compliance steps for new hires.",
-        },
-        {
-          icon: "school",
-          title: "Training tracking systems",
-          description:
-            "Monitor staff certifications, course progress, and ongoing training requirements in one system.",
-        },
-        {
-          icon: "psychology",
-          title: "AI-powered reminders and notifications",
-          description:
-            "Smart, behaviour-based alerts and follow-ups to keep prospects and teams on track.",
-        },
-        {
-          icon: "rule",
-          title: "Lead qualification & routing logic",
-          description:
-            "Automatically score, segment, and assign leads to the right team member based on predefined criteria.",
-        },
-      ],
-      whatWeOffer: {
-        title: "We design intelligent automation systems",
-        subtitle: "Using AI, CRM architecture, and workflow engineering.",
-        items: [
-          "Manual follow-ups.",
-          "Slow onboarding.",
-          "Compliance paperwork.",
-          "Staff admin.",
-          "Missed enquiries.",
-        ],
-      },
-      benefits: {
-        title: "Our automation reduces:",
-        items: [
-          "Admin workload",
-          "Response times",
-          "Human error",
-          "Compliance risk",
-        ],
-        footer: "Built by operators who understand what delays actually cost.",
-      },
-      primaryCTA: "Automate My Business",
-    },
-
-    "ai-virtual-assistants": {
-      serviceName: "AI Virtual Assistants & Intelligent Agents",
-      badge: "AI Virtual Assistants & Intelligent Agents",
-      tagline: (
-        <>
-          24/7 Digital Staff That{" "}
-          <span className="text-primary">Work Without Burnout</span>
-        </>
-      ),
-      description:
-        "Healthcare businesses, clinics, and agencies lose revenue simply because nobody responds fast enough.",
-      heroImage: null,
-      features: [
-        {
-          icon: "question_answer",
-          title: "Answer FAQs instantly",
-          description:
-            "Deliver accurate, real-time responses to common questions around the clock without human intervention.",
-        },
-        {
-          icon: "fact_check",
-          title: "Pre-qualify patients or job candidates",
-          description:
-            "Automatically assess eligibility, capture key information, and filter applicants before passing them to your team.",
-        },
-        {
-          icon: "folder_open",
-          title: "Collect required documents",
-          description:
-            "Securely request and store forms, certifications, and supporting documents in one streamlined workflow.",
-        },
-        {
-          icon: "priority_high",
-          title: "Route urgent cases correctly",
-          description:
-            "Identify high-priority enquiries and instantly direct them to the appropriate department or staff member.",
-        },
-        {
-          icon: "support_agent",
-          title: "Support internal staff queries",
-          description:
-            "Provide employees with quick answers, policy guidance, and process support through an AI assistant.",
-        },
-      ],
-      deployment: {
-        title: "We deploy assistants across:",
-        channels: [
-          "Website chat",
-          "WhatsApp",
-          "Email",
-          "Social media messaging",
-          "Internal operations",
-        ],
-      },
-      additionalNote:
-        "Designed with responsible AI principles and human handover controls. This is not hype AI. It's structured, controlled automation built for real businesses.",
-      primaryCTA: "Deploy an AI Assistant",
-    },
-
-    "seo-content-social": {
-      serviceName: "SEO & Content Systems",
-      badge: "SEO & Content Systems",
-      tagline: (
-        <>
-          Visibility That{" "}
-          <span className="text-primary">Compounds Over Time</span>
-        </>
-      ),
-      description:
-        "Most SEO agencies chase keywords. We build authority systems. Using AI-enhanced keyword intelligence and structured content strategies.",
-      heroImage: null,
-      features: [
-        {
-          icon: "insights",
-          title: "Identify high-value search opportunities",
-          description:
-            "Uncover high-intent keywords and untapped search gaps that attract qualified traffic ready to convert.",
-        },
-        {
-          icon: "web_asset",
-          title: "Build conversion-focused landing pages",
-          description:
-            "Design and optimise landing pages that rank well and guide visitors toward clear, measurable actions.",
-        },
-        {
-          icon: "verified",
-          title: "Develop trust-building content",
-          description:
-            "Create authoritative, value-driven content that strengthens credibility and nurtures long-term trust.",
-        },
-        {
-          icon: "bolt",
-          title: "Optimise technical performance",
-          description:
-            "Improve site speed, mobile responsiveness, and core technical SEO to maximise search visibility.",
-        },
-        {
-          icon: "monitoring",
-          title: "Track ranking and engagement impact",
-          description:
-            "Monitor keyword rankings, user behaviour, and conversion metrics to continuously refine performance.",
-        },
-      ],
-      forWhom: [
-        {
-          title: "For UK healthcare providers:",
-          points: [
-            "Local visibility",
-            "Trust signals",
-            "Authority positioning",
-            "Reputation strength",
-          ],
-        },
-        {
-          title: "For other sectors:",
-          points: [
-            "Sustainable inbound traffic",
-            "Lower ad dependency",
-            "Long-term brand equity",
-          ],
-        },
-      ],
-      primaryCTA: "Grow My Online Presence",
-    },
-
-    "websites-custom-software": {
-      serviceName: "Web & Custom Software",
-      badge: "Web & Custom Software",
-      tagline: (
-        <>
-          Built to Scale -
-          <span className="text-primary">Engineered for Performance</span>
-        </>
-      ),
-      description:
-        "Your website is not just a brochure. It is your conversion engine.",
-      heroImage: null,
-      features: [
-        {
-          icon: "public",
-          title: "High-performance business websites",
-          description:
-            "Optimised, responsive websites built for speed, SEO, and high conversion performance.",
-        },
-        {
-          icon: "vpn_key",
-          title: "Secure client portals",
-          description:
-            "Encrypted, access-controlled portals where clients can securely manage documents and communications.",
-        },
-        {
-          icon: "insights",
-          title: "Staff dashboards",
-          description:
-            "Custom internal dashboards providing real-time data, reporting, and operational oversight.",
-        },
-        {
-          icon: "integration_instructions",
-          title: "Custom software tools",
-          description:
-            "Tailor-made applications designed to automate and enhance your specific business workflows.",
-        },
-        {
-          icon: "cloud",
-          title: "SaaS architecture support",
-          description:
-            "Scalable cloud-based systems with user authentication, subscription billing, and performance optimisation.",
-        },
-        {
-          icon: "storefront",
-          title: "Marketplace systems",
-          description:
-            "Multi-vendor platforms with product listings, payment processing, and user management capabilities.",
-        },
-      ],
-      builtWith: {
-        title: "All built with:",
-        items: [
-          "Scalable backend architecture",
-          "Secure authentication",
-          "Role-based access controls",
-          "Automation integrations",
-          "API connectivity",
-        ],
-        footer:
-          "For healthcare clients, security and compliance awareness is embedded from the start.",
-      },
-      pricingPackages: [
-        {
-          title: "Business Websites",
-          price: "£950",
-          features: [
-            "Conversion-focused design",
-            "CMS setup",
-            "Performance optimisation",
-            "Analytics & tracking",
-          ],
-        },
-        {
-          title: "Client Portals & Dashboards",
-          price: "£2,500",
-          features: [
-            "Secure login & user roles",
-            "Data dashboards",
-            "CRM or system integrations",
-            "Access & permission controls",
-          ],
-        },
-        {
-          title: "Custom Software & Integrations",
-          price: "£4,500",
-          features: [
-            "Bespoke functionality",
-            "API integrations",
-            "Workflow automation",
-            "Scalability & security planning",
-          ],
-          highlighted: true,
-        },
-        {
-          title: "SaaS & Marketplace Support",
-          price: "£7,500+",
-          description: "Project-based or retainer.",
-          features: [
-            "Platform architecture",
-            "Feature development",
-            "Optimisation & scaling",
-            "Ongoing technical support",
-          ],
-        },
-      ],
-      pricingNote:
-        "We do not offer 'one-size-fits-all' development. Final pricing is confirmed after a technical discovery session.",
-      primaryCTA: "Request a Technical Discovery Call",
-      secondaryCTA: "Get a Project Cost Estimate",
-    },
-
-    "responsible-ai-compliance": {
-      serviceName: "Responsible AI & Compliance",
-      badge: "Responsible AI & Compliance",
-      tagline: (
-        <>
-          AI Done Properly –{" "}
-          <span className="text-primary">Not Recklessly</span>
-        </>
-      ),
-      description: (
-        <>
-          2026 UK businesses face:
-          <li>Data sensitivity.</li>
-          <li>Compliance pressure.</li>
-          <li>AI misuse risks.</li>
-          <li>Reputational damage concerns.</li>
-          <br />
-          We help organisations adopt AI responsibly.
-        </>
-      ),
-      heroImage: null,
-      features: [
-        {
-          icon: "architecture",
-          title: "AI usage frameworks",
-          description:
-            "Structured governance models that define responsible AI implementation, risk boundaries, and accountability.",
-        },
-        {
-          icon: "shield",
-          title: "Data handling best practice guidance",
-          description:
-            "Establish secure data collection, storage, and processing standards aligned with compliance requirements.",
-        },
-        {
-          icon: "privacy_tip",
-          title: "Consent-aware automation",
-          description:
-            "Design workflows that automatically respect user consent, opt-ins, and privacy regulations.",
-        },
-        {
-          icon: "manage_accounts",
-          title: "Role-based system controls",
-          description:
-            "Implement tiered access permissions to ensure users only access what their role requires.",
-        },
-        {
-          icon: "gavel",
-          title: "Human override safeguards",
-          description:
-            "Embed escalation paths and manual review checkpoints for critical or sensitive decisions.",
-        },
-      ],
-      additionalNote:
-        "We are not just technologists. We understand operational and regulatory realities.",
-      primaryCTA: "Discuss Compliance & AI",
-    },
-  };
 
   // Get the service data based on the URL slug
   const service = servicesData[slug];
@@ -537,6 +84,74 @@ const ServiceDetail = () => {
           </div>
         </section>
 
+        {/* The Problem Section (Care Agency specific) */}
+        {service.theProblem && (
+          <section className="py-16 bg-red-50 dark:bg-red-900/10">
+            <div className="max-w-4xl mx-auto px-6">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="bg-red-100 dark:bg-red-900/30 text-red-600 dark:text-red-400 p-2.5 rounded-xl">
+                  <span className="material-icons">warning</span>
+                </div>
+                <h2 className="text-3xl font-bold text-slate-900 dark:text-white">
+                  The Problem
+                </h2>
+              </div>
+              <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-6">
+                {service.theProblem.title}
+              </h3>
+              <ul className="space-y-3 mb-6">
+                {service.theProblem.issues.map((issue, index) => (
+                  <li key={index} className="flex items-start gap-3">
+                    <span className="material-icons text-red-500 text-sm mt-1">
+                      close
+                    </span>
+                    <span className="text-slate-700 dark:text-slate-300">
+                      {issue}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+              <p className="text-lg font-bold text-slate-900 dark:text-white italic">
+                {service.theProblem.conclusion}
+              </p>
+            </div>
+          </section>
+        )}
+
+        {/* System Overview (Care Agency specific) */}
+        {service.systemOverview && (
+          <section className="py-16 bg-primary/5 dark:bg-primary/10">
+            <div className="max-w-4xl mx-auto px-6">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="bg-primary text-white p-2.5 rounded-xl">
+                  <span className="material-icons">lightbulb</span>
+                </div>
+                <h2 className="text-3xl font-bold text-slate-900 dark:text-white">
+                  The Solution
+                </h2>
+              </div>
+              <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-4">
+                {service.systemOverview.title}
+              </h3>
+              <p className="text-lg text-slate-600 dark:text-slate-400 mb-6">
+                {service.systemOverview.description}
+              </p>
+              <ul className="space-y-3">
+                {service.systemOverview.benefits.map((benefit, index) => (
+                  <li key={index} className="flex items-center gap-3">
+                    <span className="material-icons text-primary text-sm">
+                      check_circle
+                    </span>
+                    <span className="font-semibold text-slate-700 dark:text-slate-300">
+                      {benefit}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </section>
+        )}
+
         {/* What We Offer / What Makes Us Different */}
         {service.whatWeOffer && (
           <section className="bg-primary/5 dark:bg-primary/10 py-16">
@@ -563,18 +178,18 @@ const ServiceDetail = () => {
           </section>
         )}
 
-        {/* Feature Grid: What's Included */}
+        {/* Feature Grid */}
         <section className="bg-white dark:bg-background-dark/50 py-24">
           <div className="max-w-7xl mx-auto px-6">
             <div className="text-center mb-16">
               <h2 className="text-3xl lg:text-4xl font-extrabold text-slate-900 dark:text-white mb-4">
-                What We Build
+                {service.systemOverview ? "What You Get" : "What We Build"}
               </h2>
               <p className="text-slate-500 dark:text-slate-400 max-w-2xl mx-auto">
                 Everything you need to transform your business.
               </p>
             </div>
-            <div className="grid md:grid-cols-3 gap-8">
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
               {service.features.map((feature, index) => (
                 <div
                   key={index}
@@ -588,14 +203,97 @@ const ServiceDetail = () => {
                   <h3 className="text-xl font-bold mb-4 text-slate-900 dark:text-white">
                     {feature.title}
                   </h3>
-                  <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
+                  <p className="text-slate-600 dark:text-slate-400 leading-relaxed mb-4">
                     {feature.description}
                   </p>
+
+                  {feature.details && feature.details.length > 0 && (
+                    <ul className="space-y-2 mt-4 pt-4 border-t border-slate-200 dark:border-slate-700">
+                      {feature.details.map((detail, idx) => (
+                        <li
+                          key={idx}
+                          className="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400"
+                        >
+                          <span className="material-icons text-primary text-xs">
+                            arrow_forward
+                          </span>
+                          {detail}
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+
+                  {/* Display shortDescription if it exists */}
+                  {feature.shortDescription && (
+                    <p className="text-slate-600 dark:text-slate-400 font-medium pt-4 mb-4">
+                      {feature.shortDescription}
+                    </p>
+                  )}
                 </div>
               ))}
             </div>
           </div>
         </section>
+
+        {/* Why Different (Care Agency specific) */}
+        {service.whyDifferent && (
+          <section className="py-16 bg-slate-50 dark:bg-slate-900/30">
+            <div className="max-w-4xl mx-auto px-6">
+              <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-4">
+                {service.whyDifferent.title}
+              </h2>
+              <p className="text-lg text-slate-600 dark:text-slate-400 mb-6">
+                {service.whyDifferent.intro}
+              </p>
+              <ul className="grid md:grid-cols-2 gap-4 mb-6">
+                {service.whyDifferent.points.map((point, index) => (
+                  <li key={index} className="flex items-center gap-3">
+                    <span className="material-icons text-primary text-sm">
+                      check_circle
+                    </span>
+                    <span className="font-medium text-slate-700 dark:text-slate-300">
+                      {point}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+              <p className="text-lg font-semibold text-slate-900 dark:text-white italic">
+                {service.whyDifferent.conclusion}
+              </p>
+            </div>
+          </section>
+        )}
+
+        {/* Results (Care Agency specific) */}
+        {service.results && (
+          <section className="py-16 bg-emerald-50 dark:bg-emerald-900/10">
+            <div className="max-w-4xl mx-auto px-6">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="bg-emerald-100 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400 p-2.5 rounded-xl">
+                  <span className="material-icons">trending_up</span>
+                </div>
+                <h2 className="text-3xl font-bold text-slate-900 dark:text-white">
+                  {service.results.title}
+                </h2>
+              </div>
+              <p className="text-lg text-slate-600 dark:text-slate-400 mb-6">
+                {service.results.subtitle}
+              </p>
+              <ul className="space-y-3">
+                {service.results.metrics.map((metric, index) => (
+                  <li key={index} className="flex items-center gap-3">
+                    <span className="material-icons text-emerald-500 text-sm">
+                      check_circle
+                    </span>
+                    <span className="text-slate-700 dark:text-slate-300 font-medium">
+                      {metric}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </section>
+        )}
 
         {/* For Whom Section */}
         {service.forWhom && (
@@ -622,6 +320,32 @@ const ServiceDetail = () => {
                   </div>
                 ))}
               </div>
+            </div>
+          </section>
+        )}
+
+        {/* Who Is This For (Care Agency specific) */}
+        {service.whoIsThisFor && (
+          <section className="py-16 bg-slate-50 dark:bg-slate-900/30">
+            <div className="max-w-4xl mx-auto px-6">
+              <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-4">
+                {service.whoIsThisFor.title}
+              </h2>
+              <p className="text-lg text-slate-600 dark:text-slate-400 mb-6">
+                {service.whoIsThisFor.subtitle}
+              </p>
+              <ul className="grid md:grid-cols-2 gap-4">
+                {service.whoIsThisFor.points.map((point, index) => (
+                  <li key={index} className="flex items-center gap-3">
+                    <span className="material-icons text-primary text-sm">
+                      check_circle
+                    </span>
+                    <span className="font-medium text-slate-700 dark:text-slate-300">
+                      {point}
+                    </span>
+                  </li>
+                ))}
+              </ul>
             </div>
           </section>
         )}
@@ -702,7 +426,7 @@ const ServiceDetail = () => {
           </section>
         )}
 
-        {/* Pricing Section (Optional - for websites service) */}
+        {/* Pricing Section */}
         {service.pricingPackages && (
           <section className="py-24 bg-background-light dark:bg-background-dark">
             <div className="max-w-7xl mx-auto px-6">
@@ -710,20 +434,30 @@ const ServiceDetail = () => {
                 <div className="inline-flex items-center gap-2 mb-4">
                   <div className="w-8 h-px bg-primary"></div>
                   <span className="text-primary font-bold uppercase tracking-widest text-sm">
-                    Pricing Guide
+                    Pricing
                   </span>
                   <div className="w-8 h-px bg-primary"></div>
                 </div>
                 <h2 className="text-3xl lg:text-4xl font-extrabold text-slate-900 dark:text-white mb-4">
-                  Indicative Investment
+                  {service.systemOverview
+                    ? "Simple, Transparent Pricing"
+                    : "Indicative Investment"}
                 </h2>
-                <p className="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
-                  Every project is different. The figures below are guides only
-                  and depend on scope, integrations, and complexity.
-                </p>
+                {!service.systemOverview && (
+                  <p className="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
+                    Every project is different. The figures below are guides
+                    only and depend on scope, integrations, and complexity.
+                  </p>
+                )}
               </div>
 
-              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+              <div
+                className={`grid ${
+                  service.pricingPackages.length === 2
+                    ? "md:grid-cols-2 max-w-4xl mx-auto"
+                    : "md:grid-cols-2 lg:grid-cols-4"
+                } gap-6 mb-12`}
+              >
                 {service.pricingPackages.map((pkg, index) => (
                   <div
                     key={index}
@@ -735,19 +469,26 @@ const ServiceDetail = () => {
                   >
                     {pkg.highlighted && (
                       <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary text-white px-4 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest">
-                        Most Popular
+                        Best Value
                       </div>
                     )}
                     <h3 className="text-xl font-bold mb-2 min-h-16">
                       {pkg.title}
                     </h3>
                     <div className="flex items-baseline gap-1 mb-6">
-                      <span className="text-slate-400 text-sm font-medium">
-                        from
-                      </span>
+                      {!pkg.priceUnit && (
+                        <span className="text-slate-400 text-sm font-medium">
+                          from
+                        </span>
+                      )}
                       <span className="text-3xl font-extrabold text-slate-900 dark:text-white">
                         {pkg.price}
                       </span>
+                      {pkg.priceUnit && (
+                        <span className="text-slate-500 text-sm ml-1">
+                          {pkg.priceUnit}
+                        </span>
+                      )}
                     </div>
                     {pkg.description && (
                       <p className="text-slate-500 text-sm mb-6 pb-6 border-b border-slate-100 dark:border-slate-700">
@@ -783,7 +524,7 @@ const ServiceDetail = () => {
                     </span>
                     <div>
                       <h5 className="font-bold text-amber-900 dark:text-amber-200 text-sm mb-1">
-                        Important Note
+                        {service.systemOverview ? "Note" : "Important Note"}
                       </h5>
                       <p className="text-xs text-amber-800 dark:text-amber-300">
                         {service.pricingNote}
@@ -810,6 +551,25 @@ const ServiceDetail = () => {
                   </p>
                 </div>
               </div>
+            </div>
+          </section>
+        )}
+
+        {/* Final CTA for Care Agency */}
+        {service.finalCTAMessage && (
+          <section className="py-20 bg-white dark:bg-slate-900">
+            <div className="max-w-3xl mx-auto px-6 text-center">
+              <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-6">
+                Ready to Get Started?
+              </h2>
+              <p className="text-lg text-slate-600 dark:text-slate-400 mb-8 leading-relaxed">
+                {service.finalCTAMessage}
+              </p>
+              <Link to="/contact-us">
+                <Button variant="primary" size="xl">
+                  {service.primaryCTA}
+                </Button>
+              </Link>
             </div>
           </section>
         )}

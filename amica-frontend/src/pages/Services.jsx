@@ -73,8 +73,25 @@ const Services = () => {
       cta: "Grow My Online Presence",
     },
     {
-      slug: "responsible-ai-compliance",
+      slug: "care-agency-recruitment",
       icon: "verified_user",
+      title: "Care Agency Recruitment & Compliance Automation System",
+      description: "Stop chasing documents and start onboarding faster.",
+      features: [
+        "Centralised applicant intake from all sources",
+        "Automated compliance workflow",
+        "Document collection & verification",
+        "Staff readiness dashboard",
+        "CQC-ready compliance tracking",
+      ],
+      image: null,
+      imagePosition: "right",
+      cta: "Book a Free 15-Minute Workflow Review",
+      badge: "Care Sector Specialist",
+    },
+    {
+      slug: "responsible-ai-compliance",
+      icon: "security",
       title: "Responsible AI & Digital Compliance",
       description: "AI done right.",
       features: [
@@ -220,195 +237,197 @@ const Services = () => {
 
         {/* Websites, Web Portals & Custom Software - CONSOLIDATED SERVICE */}
         <section className="max-w-7xl mx-auto px-6">
-          <div className="grid md:grid-cols-2 gap-16 items-start">
-            {/* Left Column - Service Description */}
-            <div>
-              <div className="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center mb-6">
-                <span className="material-icons text-primary text-3xl">
-                  language
-                </span>
-              </div>
-              <h2 className="text-4xl font-extrabold text-slate-900 dark:text-white mb-4">
-                Websites, Web Portals & Custom Software
-              </h2>
-              <h3 className="text-2xl font-semibold text-slate-800 dark:text-slate-200 mb-6 tracking-tight">
-                Built to scale. Engineered for performance.
-              </h3>
-              <p className="text-slate-600 dark:text-slate-400 text-lg mb-8 leading-relaxed">
-                Fast, secure, and conversion-focused digital platforms —
-                designed around your business processes, not templates.
-              </p>
-
-              <h4 className="text-lg font-bold text-slate-900 dark:text-white mb-4">
-                What We Build
-              </h4>
-              <ul className="space-y-4 mb-10">
-                <li className="flex items-center gap-3">
-                  <span className="material-icons text-primary text-sm">
-                    check_circle
+          <Link to="/services/websites-custom-software">
+            <div className="grid md:grid-cols-2 gap-16 items-start">
+              {/* Left Column - Service Description */}
+              <div>
+                <div className="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center mb-6">
+                  <span className="material-icons text-primary text-3xl">
+                    language
                   </span>
-                  <span className="font-medium">
-                    High-performance business websites
-                  </span>
-                </li>
-                <li className="flex items-center gap-3">
-                  <span className="material-icons text-primary text-sm">
-                    check_circle
-                  </span>
-                  <span className="font-medium">
-                    Secure client portals & dashboards
-                  </span>
-                </li>
-                <li className="flex items-center gap-3">
-                  <span className="material-icons text-primary text-sm">
-                    check_circle
-                  </span>
-                  <span className="font-medium">
-                    Custom software & system integrations
-                  </span>
-                </li>
-                <li className="flex items-center gap-3">
-                  <span className="material-icons text-primary text-sm">
-                    check_circle
-                  </span>
-                  <span className="font-medium">
-                    SaaS & marketplace platforms
-                  </span>
-                </li>
-                <li className="flex items-center gap-3">
-                  <span className="material-icons text-primary text-sm">
-                    check_circle
-                  </span>
-                  <span className="font-medium">
-                    Role-based access control & security hardening
-                  </span>
-                </li>
-              </ul>
-
-              {/* Image Placeholder */}
-              <div className="relative mb-10">
-                <div className="absolute inset-0 bg-primary/5 rounded-3xl rotate-3 scale-105"></div>
-                <div className="relative rounded-3xl shadow-2xl w-full h-[300px] bg-slate-300 dark:bg-slate-700"></div>
-              </div>
-            </div>
-
-            {/* Right Column - Pricing Guide */}
-            <div>
-              <div className="bg-slate-50 dark:bg-slate-900/50 rounded-3xl p-8 border border-slate-200 dark:border-slate-800">
-                <div className="text-center mb-8">
-                  <div className="inline-flex items-center gap-2 mb-4">
-                    <div className="w-8 h-px bg-primary"></div>
-                    <span className="text-primary font-bold uppercase tracking-widest text-xs">
-                      Pricing Guide
-                    </span>
-                    <div className="w-8 h-px bg-primary"></div>
-                  </div>
-                  <h3 className="text-2xl font-extrabold text-slate-900 dark:text-white mb-3">
-                    Indicative Investment
-                  </h3>
-                  <p className="text-slate-600 dark:text-slate-400 text-sm">
-                    Every project is different. The figures below are guides
-                    only and depend on scope, integrations, and complexity.
-                  </p>
                 </div>
+                <h2 className="text-4xl font-extrabold text-slate-900 dark:text-white mb-4">
+                  Websites, Web Portals & Custom Software
+                </h2>
+                <h3 className="text-2xl font-semibold text-slate-800 dark:text-slate-200 mb-6 tracking-tight">
+                  Built to scale. Engineered for performance.
+                </h3>
+                <p className="text-slate-600 dark:text-slate-400 text-lg mb-8 leading-relaxed">
+                  Fast, secure, and conversion-focused digital platforms —
+                  designed around your business processes, not templates.
+                </p>
 
-                <div className="space-y-6 mb-8">
-                  {softwarePackages.map((pkg, index) => (
-                    <div
-                      key={index}
-                      className={`p-6 rounded-xl border transition-all ${
-                        pkg.highlighted
-                          ? "bg-white dark:bg-slate-800 border-primary shadow-lg shadow-primary/10"
-                          : "bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700 hover:border-primary/50"
-                      }`}
-                    >
-                      {pkg.highlighted && (
-                        <div className="inline-block bg-primary text-white px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest mb-3">
-                          Most Popular
-                        </div>
-                      )}
-                      <div className="flex items-baseline justify-between mb-3">
-                        <h4 className="text-lg font-bold text-slate-900 dark:text-white">
-                          {pkg.title}
-                        </h4>
-                        <div className="text-right">
-                          <div className="flex items-baseline gap-1">
-                            <span className="text-xs text-slate-400 font-medium">
-                              from
-                            </span>
-                            <span className="text-2xl font-extrabold text-primary">
-                              {pkg.price}
-                            </span>
+                <h4 className="text-lg font-bold text-slate-900 dark:text-white mb-4">
+                  What We Build
+                </h4>
+                <ul className="space-y-4 mb-10">
+                  <li className="flex items-center gap-3">
+                    <span className="material-icons text-primary text-sm">
+                      check_circle
+                    </span>
+                    <span className="font-medium">
+                      High-performance business websites
+                    </span>
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <span className="material-icons text-primary text-sm">
+                      check_circle
+                    </span>
+                    <span className="font-medium">
+                      Secure client portals & dashboards
+                    </span>
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <span className="material-icons text-primary text-sm">
+                      check_circle
+                    </span>
+                    <span className="font-medium">
+                      Custom software & system integrations
+                    </span>
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <span className="material-icons text-primary text-sm">
+                      check_circle
+                    </span>
+                    <span className="font-medium">
+                      SaaS & marketplace platforms
+                    </span>
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <span className="material-icons text-primary text-sm">
+                      check_circle
+                    </span>
+                    <span className="font-medium">
+                      Role-based access control & security hardening
+                    </span>
+                  </li>
+                </ul>
+
+                {/* Image Placeholder */}
+                <div className="relative mb-10">
+                  <div className="absolute inset-0 bg-primary/5 rounded-3xl rotate-3 scale-105"></div>
+                  <div className="relative rounded-3xl shadow-2xl w-full h-[300px] bg-slate-300 dark:bg-slate-700"></div>
+                </div>
+              </div>
+
+              {/* Right Column - Pricing Guide */}
+              <div>
+                <div className="bg-slate-50 dark:bg-slate-900/50 rounded-3xl p-8 border border-slate-200 dark:border-slate-800">
+                  <div className="text-center mb-8">
+                    <div className="inline-flex items-center gap-2 mb-4">
+                      <div className="w-8 h-px bg-primary"></div>
+                      <span className="text-primary font-bold uppercase tracking-widest text-xs">
+                        Pricing Guide
+                      </span>
+                      <div className="w-8 h-px bg-primary"></div>
+                    </div>
+                    <h3 className="text-2xl font-extrabold text-slate-900 dark:text-white mb-3">
+                      Indicative Investment
+                    </h3>
+                    <p className="text-slate-600 dark:text-slate-400 text-sm">
+                      Every project is different. The figures below are guides
+                      only and depend on scope, integrations, and complexity.
+                    </p>
+                  </div>
+
+                  <div className="space-y-6 mb-8">
+                    {softwarePackages.map((pkg, index) => (
+                      <div
+                        key={index}
+                        className={`p-6 rounded-xl border transition-all ${
+                          pkg.highlighted
+                            ? "bg-white dark:bg-slate-800 border-primary shadow-lg shadow-primary/10"
+                            : "bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700 hover:border-primary/50"
+                        }`}
+                      >
+                        {pkg.highlighted && (
+                          <div className="inline-block bg-primary text-white px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest mb-3">
+                            Most Popular
                           </div>
-                          {pkg.description && (
-                            <p className="text-xs text-slate-500 mt-1">
-                              {pkg.description}
-                            </p>
-                          )}
+                        )}
+                        <div className="flex items-baseline justify-between mb-3">
+                          <h4 className="text-lg font-bold text-slate-900 dark:text-white">
+                            {pkg.title}
+                          </h4>
+                          <div className="text-right">
+                            <div className="flex items-baseline gap-1">
+                              <span className="text-xs text-slate-400 font-medium">
+                                from
+                              </span>
+                              <span className="text-2xl font-extrabold text-primary">
+                                {pkg.price}
+                              </span>
+                            </div>
+                            {pkg.description && (
+                              <p className="text-xs text-slate-500 mt-1">
+                                {pkg.description}
+                              </p>
+                            )}
+                          </div>
                         </div>
+                        <ul className="space-y-2">
+                          {pkg.features.map((feature, idx) => (
+                            <li
+                              key={idx}
+                              className="flex items-start gap-2 text-sm text-slate-600 dark:text-slate-400"
+                            >
+                              <span className="material-icons text-primary text-xs mt-0.5">
+                                done
+                              </span>
+                              <span>{feature}</span>
+                            </li>
+                          ))}
+                        </ul>
                       </div>
-                      <ul className="space-y-2">
-                        {pkg.features.map((feature, idx) => (
-                          <li
-                            key={idx}
-                            className="flex items-start gap-2 text-sm text-slate-600 dark:text-slate-400"
-                          >
-                            <span className="material-icons text-primary text-xs mt-0.5">
-                              done
-                            </span>
-                            <span>{feature}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  ))}
-                </div>
+                    ))}
+                  </div>
 
-                {/* Important Note */}
-                <div className="bg-amber-50 dark:bg-amber-900/10 border border-amber-200 dark:border-amber-900/30 rounded-xl p-4 mb-6">
-                  <div className="flex items-start gap-3">
-                    <span className="material-icons text-amber-600 dark:text-amber-500 text-sm mt-0.5">
-                      info
-                    </span>
-                    <div>
-                      <h5 className="font-bold text-amber-900 dark:text-amber-200 text-sm mb-1">
-                        Important Note
-                      </h5>
-                      <p className="text-xs text-amber-800 dark:text-amber-300">
-                        We do not offer "one-size-fits-all" development. Final
-                        pricing is confirmed after a technical discovery
-                        session.
-                      </p>
+                  {/* Important Note */}
+                  <div className="bg-amber-50 dark:bg-amber-900/10 border border-amber-200 dark:border-amber-900/30 rounded-xl p-4 mb-6">
+                    <div className="flex items-start gap-3">
+                      <span className="material-icons text-amber-600 dark:text-amber-500 text-sm mt-0.5">
+                        info
+                      </span>
+                      <div>
+                        <h5 className="font-bold text-amber-900 dark:text-amber-200 text-sm mb-1">
+                          Important Note
+                        </h5>
+                        <p className="text-xs text-amber-800 dark:text-amber-300">
+                          We do not offer "one-size-fits-all" development. Final
+                          pricing is confirmed after a technical discovery
+                          session.
+                        </p>
+                      </div>
                     </div>
                   </div>
-                </div>
 
-                {/* CTA Buttons */}
-                <div className="space-y-3">
-                  <Link to="/contact-us">
-                    <Button
-                      variant="primary"
-                      className="w-full"
-                      icon="calendar_today"
-                      iconPosition="left"
-                    >
-                      Request a Technical Discovery Call
-                    </Button>
-                  </Link>
-                  <Link to="/contact-us">
-                    <Button
-                      variant="outline"
-                      className="w-full mt-2"
-                      icon="calculate"
-                      iconPosition="left"
-                    >
-                      Get a Project Cost Estimate
-                    </Button>
-                  </Link>
+                  {/* CTA Buttons */}
+                  <div className="space-y-3">
+                    <Link to="/contact-us">
+                      <Button
+                        variant="primary"
+                        className="w-full"
+                        icon="calendar_today"
+                        iconPosition="left"
+                      >
+                        Request a Technical Discovery Call
+                      </Button>
+                    </Link>
+                    <Link to="/contact-us">
+                      <Button
+                        variant="outline"
+                        className="w-full mt-2"
+                        icon="calculate"
+                        iconPosition="left"
+                      >
+                        Get a Project Cost Estimate
+                      </Button>
+                    </Link>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
+          </Link>
         </section>
       </main>
 

@@ -56,9 +56,15 @@ const Navigation = ({ variant = "default", isDark = false }) => {
     },
     {
       slug: "responsible-ai-compliance",
-      icon: "verified_user",
+      icon: "security",
       label: "Responsible AI & Compliance",
       description: "AI done right",
+    },
+    {
+      slug: "care-agency-recruitment",
+      icon: "verified_user",
+      label: "Care Agency Recruitment & Compliance Automation System",
+      description: "Stop chasing documents and start onboarding faster",
     },
   ];
 
