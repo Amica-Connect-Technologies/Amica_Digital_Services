@@ -75,6 +75,16 @@ const Home = () => {
       features: ["Risk Assessment", "Governance Tools"],
       featureIconColor: "text-slate-500",
     },
+    {
+      slug: "care-agency-recruitment",
+      icon: "verified_user",
+      iconColor: "text-sky-500",
+      title: "Care Agency Recruitment",
+      description:
+        "Automated compliance and recruitment workflows that reduce onboarding time by 40%.",
+      features: ["Document Collection", "Compliance Tracking"],
+      featureIconColor: "text-sky-500",
+    },
   ];
 
   // Group services into rows of 3 for desktop
