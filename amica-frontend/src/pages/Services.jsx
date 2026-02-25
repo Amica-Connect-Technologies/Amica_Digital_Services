@@ -4,6 +4,13 @@ import Footer from "../components/Footer";
 import Button from "../components/Button";
 import SectionHeader from "../components/SectionHeader";
 import { Link } from "react-router-dom";
+import AILeadGeneration from "../../public/AI Lead Generation & Growth Marketing.jpg";
+import AIAutomationCRM from "../../public/AI Automation & CRM Systems.jpg";
+import AIVirtual from "../../public/AI Virtual Assistants & Intelligent Agents.jpg";
+import CareAgency from "../../public/Care Agency Recruitment & Compliance Automation System.jpg";
+import ResponsibleAI from "../../public/Responsible AI & Compliance.jpg";
+import SEO from "../../public/SEO & Content Systems.jpg";
+import WebCustomSoftware from "../../public/Web & Custom Software.jpg";
 
 const Services = () => {
   const services = [
@@ -19,7 +26,7 @@ const Services = () => {
         "Lead quality scoring & tracking",
         "Multi-channel attribution",
       ],
-      image: null,
+      image: AILeadGeneration,
       imagePosition: "right",
       cta: "Get More Qualified Leads",
     },
@@ -35,7 +42,7 @@ const Services = () => {
         "Pipeline automation & reporting",
         "Internal workflow optimisation",
       ],
-      image: null,
+      image: AIAutomationCRM,
       imagePosition: "left",
       cta: "Automate My Business",
     },
@@ -52,7 +59,7 @@ const Services = () => {
         "Human handover when required",
       ],
       subtitle: "Ethical. Transparent. Controlled.",
-      image: null,
+      image: AIVirtual,
       imagePosition: "right",
       cta: "Deploy an AI Assistant",
     },
@@ -68,7 +75,7 @@ const Services = () => {
         "Content repurposing systems",
         "Authority & trust building",
       ],
-      image: null,
+      image: SEO,
       imagePosition: "left",
       cta: "Grow My Online Presence",
     },
@@ -84,7 +91,7 @@ const Services = () => {
         "Staff readiness dashboard",
         "CQC-ready compliance tracking",
       ],
-      image: null,
+      image: CareAgency,
       imagePosition: "right",
       cta: "Book a Free 15-Minute Workflow Review",
       badge: "Care Sector Specialist",
@@ -102,7 +109,7 @@ const Services = () => {
         "Ethical AI frameworks",
       ],
       subtitle: "(Guidance, not legal certification)",
-      image: null,
+      image: ResponsibleAI,
       imagePosition: "right",
       cta: "Discuss Compliance & AI",
     },
@@ -227,7 +234,15 @@ const Services = () => {
                 <div className={isEven ? "" : "md:order-1"}>
                   <div className="relative">
                     <div className="absolute inset-0 bg-primary/5 rounded-3xl rotate-3 scale-105"></div>
-                    <div className="relative rounded-3xl shadow-2xl w-full h-[400px] bg-slate-300 dark:bg-slate-700"></div>
+                    <div className="relative rounded-3xl overflow-hidden shadow-2xl w-full h-[400px]">
+                      {service.image && (
+                        <img
+                          src={service.image}
+                          alt={service.title}
+                          className="w-full h-[400px] object-cover"
+                        />
+                      )}
+                    </div>
                   </div>
                 </div>
               </div>
@@ -306,7 +321,13 @@ const Services = () => {
                 {/* Image Placeholder */}
                 <div className="relative mb-10">
                   <div className="absolute inset-0 bg-primary/5 rounded-3xl rotate-3 scale-105"></div>
-                  <div className="relative rounded-3xl shadow-2xl w-full h-[300px] bg-slate-300 dark:bg-slate-700"></div>
+                  <div className="relative rounded-3xl overflow-hidden shadow-2xl w-full h-[300px]">
+                    <img
+                      src={WebCustomSoftware}
+                      alt="Websites, Web Portals & Custom Software"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
                 </div>
               </div>
 

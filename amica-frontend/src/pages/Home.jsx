@@ -8,6 +8,17 @@ import FeaturePoint from "../components/FeaturePoint";
 import ProcessStep from "../components/ProcessStep";
 import IndustryIcon from "../components/IndustryIcon";
 import SectionHeader from "../components/SectionHeader";
+import IndustriesWeServe from "../../public/Industries We Serve.jpg";
+
+const heroImages = [
+  "../../public/AI Lead Generation & Growth Marketing.jpg",
+  "../../public/AI Automation & CRM Systems.jpg",
+  "../../public/AI Virtual Assistants & Intelligent Agents.jpg",
+  "../../public/Care Agency Recruitment & Compliance Automation System.jpg",
+  "../../public/Responsible AI & Compliance.jpg",
+  "../../public/SEO & Content Systems.jpg",
+  "../../public/Web & Custom Software.jpg",
+];
 
 const Home = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -207,13 +218,22 @@ const Home = () => {
 
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center pt-20 overflow-hidden dark:bg-background-dark hero-gradient pb-10">
-        <div className="absolute inset-0 opacity-20 pointer-events-none">
-          <div className="absolute top-20 left-10 w-96 h-96 bg-primary/20 blur-[100px] rounded-full"></div>
-          <div className="absolute bottom-20 right-10 w-96 h-96 bg-accent-indigo/20 blur-[100px] rounded-full"></div>
+        <div className="absolute inset-0 z-0">
+          {heroImages.map((img, index) => (
+            <img
+              key={index}
+              src={img}
+              alt={`Hero ${index + 1}`}
+              className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ease-in-out ${
+                index === currentSlide ? "opacity-100" : "opacity-0"
+              }`}
+            />
+          ))}
+          <div className="absolute inset-0 bg-black/30"></div>
         </div>
 
         <div className="max-w-7xl mx-auto px-6 relative z-10 grid lg:grid-cols-2 gap-12 items-center">
-          <div className="space-y-8">
+          <div className="bg-slate-300/80 dark:bg-slate-900/40 backdrop-blur-sm rounded-3xl p-5  space-y-8">
             <div className="inline-flex items-center space-x-2 bg-primary/10 border border-primary/20 px-4 py-2 rounded-full">
               <span className="flex h-2 w-2 rounded-full bg-primary animate-pulse"></span>
               <span className="text-xs font-bold uppercase tracking-widest text-primary">
@@ -269,18 +289,7 @@ const Home = () => {
             </div>
           </div>
 
-          <div className="relative hidden lg:block">
-            <div className="absolute -inset-4 bg-gradient-to-r from-primary to-accent-indigo opacity-20 blur-2xl rounded-3xl"></div>
-            <div className="relative bg-slate-900/40 border border-white/10 rounded-3xl p-8 backdrop-blur-xl">
-              <div className="w-full h-96 bg-slate-800 rounded-2xl"></div>
-              <div className="absolute -bottom-6 -left-6 bg-background-dark border border-white/10 p-6 rounded-2xl shadow-2xl">
-                <div className="text-3xl font-bold text-primary">94%</div>
-                <div className="text-xs uppercase tracking-widest text-slate-500">
-                  Automation Accuracy
-                </div>
-              </div>
-            </div>
-          </div>
+          <div className="relative hidden"></div>
         </div>
       </section>
 
@@ -460,7 +469,11 @@ const Home = () => {
 
             <div className="relative">
               <div className="bg-gradient-to-br from-slate-100 to-slate-200 dark:from-slate-800 dark:to-slate-900 rounded-3xl p-4 overflow-hidden shadow-inner">
-                <div className="w-full h-96 bg-slate-300 dark:bg-slate-700 rounded-2xl"></div>
+                <img
+                  src={IndustriesWeServe}
+                  alt="Industries We Serve"
+                  className="w-full h-96 object-cover rounded-2xl"
+                />
               </div>
               <div className="absolute -top-10 -right-10 w-40 h-40 bg-primary/20 rounded-full blur-3xl"></div>
             </div>

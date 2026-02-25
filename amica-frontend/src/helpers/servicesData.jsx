@@ -1,5 +1,12 @@
 // src/helpers/servicesData.jsx
 import React from "react";
+import AILeadGeneration from "../../public/AI Lead Generation & Growth Marketing.jpg";
+import AIAutomationCRM from "../../public/AI Automation & CRM Systems.jpg";
+import AIVirtual from "../../public/AI Virtual Assistants & Intelligent Agents.jpg";
+import CareAgency from "../../public/Care Agency Recruitment & Compliance Automation System.jpg";
+import ResponsibleAI from "../../public/Responsible AI & Compliance.jpg";
+import SEO from "../../public/SEO & Content Systems.jpg";
+import WebCustomSoftware from "../../public/Web & Custom Software.jpg";
 
 const servicesData = {
   "ai-lead-generation": {
@@ -18,7 +25,7 @@ const servicesData = {
         works. But hope is not a strategy.
       </>
     ),
-    heroImage: null,
+    heroImage: AILeadGeneration,
     features: [
       {
         icon: "person_search",
@@ -89,7 +96,7 @@ const servicesData = {
     ),
     description:
       "In UK healthcare and service sectors, the biggest challenge in 2026 is  not demand — it's operational overload.",
-    heroImage: null,
+    heroImage: AIAutomationCRM,
     features: [
       {
         icon: "autorenew",
@@ -169,7 +176,7 @@ const servicesData = {
     ),
     description:
       "Healthcare businesses, clinics, and agencies lose revenue simply because nobody responds fast enough.",
-    heroImage: null,
+    heroImage: AIVirtual,
     features: [
       {
         icon: "question_answer",
@@ -228,7 +235,7 @@ const servicesData = {
     ),
     description:
       "Most SEO agencies chase keywords. We build authority systems. Using AI-enhanced keyword intelligence and structured content strategies.",
-    heroImage: null,
+    heroImage: SEO,
     features: [
       {
         icon: "insights",
@@ -294,7 +301,7 @@ const servicesData = {
     ),
     description:
       "Your website is not just a brochure. It is your conversion engine.",
-    heroImage: null,
+    heroImage: WebCustomSoftware,
     features: [
       {
         icon: "public",
@@ -414,7 +421,7 @@ const servicesData = {
         We help organisations adopt AI responsibly.
       </>
     ),
-    heroImage: null,
+    heroImage: ResponsibleAI,
     features: [
       {
         icon: "architecture",
@@ -474,7 +481,7 @@ const servicesData = {
         providers.
       </>
     ),
-    heroImage: null,
+    heroImage: CareAgency,
     theProblem: {
       title: "If you run a care agency in 2026, you already know:",
       issues: [

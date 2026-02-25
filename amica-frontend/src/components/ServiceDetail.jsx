@@ -37,49 +37,63 @@ const ServiceDetail = () => {
           </nav>
         </div>
 
-        {/* Hero Split */}
-        <section className="max-w-7xl mx-auto px-6 py-12 lg:py-24 grid lg:grid-cols-2 gap-16 items-center">
-          <div>
-            {service.badge && (
-              <span className="inline-block px-4 py-1.5 bg-primary/10 text-primary text-xs font-bold rounded-full mb-6 uppercase tracking-widest">
-                {service.badge}
-              </span>
-            )}
-            <h1 className="text-5xl lg:text-6xl font-extrabold text-slate-900 dark:text-white leading-[1.1] mb-8">
-              {service.tagline}
-            </h1>
-            <p className="text-lg lg:text-xl text-slate-600 dark:text-slate-400 leading-relaxed mb-10 max-w-xl">
-              {service.description}
-            </p>
-            <div className="flex flex-wrap gap-4">
-              <Link to="/contact-us">
-                <Button variant="primary" size="xl">
-                  {service.primaryCTA}
-                </Button>
-              </Link>
-              {service.secondaryCTA && (
-                <Link to="/contact-us">
-                  <Button variant="secondary" size="xl">
-                    {service.secondaryCTA}
-                  </Button>
-                </Link>
-              )}
-            </div>
-          </div>
+        {/* Hero Background Split */}
+        <section className="relative overflow-hidden">
+          {/* Background Image */}
+          {service.heroImage && (
+            <div
+              className="absolute inset-0 bg-cover bg-right bg-no-repeat"
+              style={{
+                backgroundImage: `url(${service.heroImage})`,
+              }}
+            />
+          )}
 
-          <div className="relative group">
-            <div className="absolute -inset-4 bg-primary/10 rounded-3xl blur-2xl group-hover:bg-primary/20 transition-all duration-500"></div>
-            <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-              {service.heroImage ? (
-                <img
-                  alt={service.serviceName}
-                  className="w-full h-[500px] object-cover"
-                  src={service.heroImage}
-                />
-              ) : (
-                <div className="w-full h-[500px] bg-slate-300 dark:bg-slate-700"></div>
-              )}
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent"></div>
+          {/* Dark Overlay for readability */}
+          <div className="absolute inset-0 bg-slate-900/70"></div>
+
+          {/* Content */}
+          <div className="relative max-w-7xl mx-auto px-6 py-20 lg:py-32">
+            <div className="grid lg:grid-cols-2 items-center">
+              {/* LEFT CONTENT */}
+              <div className="text-white">
+                {service.badge && (
+                  <span className="inline-block px-4 py-1.5 bg-white/10 backdrop-blur text-white text-xs font-bold rounded-full mb-6 uppercase tracking-widest">
+                    {service.badge}
+                  </span>
+                )}
+
+                <h1 className="text-5xl lg:text-6xl font-extrabold leading-[1.1] mb-8">
+                  {service.tagline}
+                </h1>
+
+                <p className="text-lg lg:text-xl text-slate-200 leading-relaxed mb-10 max-w-xl">
+                  {service.description}
+                </p>
+
+                <div className="flex flex-wrap gap-4">
+                  <Link to="/contact-us">
+                    <Button variant="primary" size="xl">
+                      {service.primaryCTA}
+                    </Button>
+                  </Link>
+
+                  {service.secondaryCTA && (
+                    <Link to="/contact-us">
+                      <Button
+                        variant="secondary"
+                        className="text-primary"
+                        size="xl"
+                      >
+                        {service.secondaryCTA}
+                      </Button>
+                    </Link>
+                  )}
+                </div>
+              </div>
+
+              {/* RIGHT SIDE EMPTY (for visual balance) */}
+              <div className="hidden lg:block"></div>
             </div>
           </div>
         </section>
