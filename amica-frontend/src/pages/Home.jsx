@@ -8,16 +8,23 @@ import FeaturePoint from "../components/FeaturePoint";
 import ProcessStep from "../components/ProcessStep";
 import IndustryIcon from "../components/IndustryIcon";
 import SectionHeader from "../components/SectionHeader";
-import IndustriesWeServe from "../../public/Industries We Serve.jpg";
+import IndustriesWeServe from "../assets/Industries We Serve.jpg";
+import AILeadGeneration from "../assets/AI Lead Generation & Growth Marketing.jpg";
+import AIAutomationCRM from "../assets/AI Automation & CRM Systems.jpg";
+import AIVirtual from "../assets/AI Virtual Assistants & Intelligent Agents.jpg";
+import CareAgency from "../assets/Care Agency Recruitment & Compliance Automation System.jpg";
+import ResponsibleAI from "../assets/Responsible AI & Compliance.jpg";
+import SEO from "../assets/SEO & Content Systems.jpg";
+import WebCustomSoftware from "../assets/Web & Custom Software.jpg";
 
 const heroImages = [
-  "../../public/AI Lead Generation & Growth Marketing.jpg",
-  "../../public/AI Automation & CRM Systems.jpg",
-  "../../public/AI Virtual Assistants & Intelligent Agents.jpg",
-  "../../public/Care Agency Recruitment & Compliance Automation System.jpg",
-  "../../public/Responsible AI & Compliance.jpg",
-  "../../public/SEO & Content Systems.jpg",
-  "../../public/Web & Custom Software.jpg",
+  AILeadGeneration,
+  AIAutomationCRM,
+  AIVirtual,
+  CareAgency,
+  ResponsibleAI,
+  SEO,
+  WebCustomSoftware,
 ];
 
 const Home = () => {

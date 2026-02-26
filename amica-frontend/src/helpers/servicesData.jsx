@@ -1,12 +1,12 @@
 // src/helpers/servicesData.jsx
 import React from "react";
-import AILeadGeneration from "../../public/AI Lead Generation & Growth Marketing.jpg";
-import AIAutomationCRM from "../../public/AI Automation & CRM Systems.jpg";
-import AIVirtual from "../../public/AI Virtual Assistants & Intelligent Agents.jpg";
-import CareAgency from "../../public/Care Agency Recruitment & Compliance Automation System.jpg";
-import ResponsibleAI from "../../public/Responsible AI & Compliance.jpg";
-import SEO from "../../public/SEO & Content Systems.jpg";
-import WebCustomSoftware from "../../public/Web & Custom Software.jpg";
+import AILeadGeneration from "../assets/AI Lead Generation & Growth Marketing.jpg";
+import AIAutomationCRM from "../assets/AI Automation & CRM Systems.jpg";
+import AIVirtual from "../assets/AI Virtual Assistants & Intelligent Agents.jpg";
+import CareAgency from "../assets/Care Agency Recruitment & Compliance Automation System.jpg";
+import ResponsibleAI from "../assets/Responsible AI & Compliance.jpg";
+import SEO from "../assets/SEO & Content Systems.jpg";
+import WebCustomSoftware from "../assets/Web & Custom Software.jpg";
 
 const servicesData = {
   "ai-lead-generation": {
