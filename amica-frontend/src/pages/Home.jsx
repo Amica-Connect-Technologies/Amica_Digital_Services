@@ -224,51 +224,58 @@ const Home = () => {
       <Navigation variant="glass" />
 
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center pt-20 overflow-hidden dark:bg-background-dark hero-gradient pb-10">
-        <div className="absolute inset-0 z-0">
+      <section className="relative overflow-hidden min-h-screen flex items-center">
+        {/* Background Image Slider */}
+        <div className="absolute inset-0">
           {heroImages.map((img, index) => (
-            <img
+            <div
               key={index}
-              src={img}
-              alt={`Hero ${index + 1}`}
-              className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ease-in-out ${
+              className={`absolute inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-1000 ease-in-out ${
                 index === currentSlide ? "opacity-100" : "opacity-0"
               }`}
+              style={{
+                backgroundImage: `url(${img})`,
+              }}
             />
           ))}
-          <div className="absolute inset-0 bg-black/30"></div>
         </div>
 
-        <div className="max-w-7xl mx-auto px-6 relative z-10 grid lg:grid-cols-2 gap-12 items-center">
-          <div className="bg-slate-300/80 dark:bg-slate-900/40 backdrop-blur-sm rounded-3xl p-5  space-y-8">
-            <div className="inline-flex items-center space-x-2 bg-primary/10 border border-primary/20 px-4 py-2 rounded-full">
-              <span className="flex h-2 w-2 rounded-full bg-primary animate-pulse"></span>
-              <span className="text-xs font-bold uppercase tracking-widest text-primary">
-                Intelligent Growth Engine
+        {/* Dark Overlay for readability */}
+        <div className="absolute inset-0 bg-slate-900/70"></div>
+
+        {/* Content */}
+        <div className="relative max-w-7xl mx-auto px-6 py-20 lg:py-32 w-full">
+          <div className="grid lg:grid-cols-2 items-center">
+            {/* LEFT CONTENT */}
+            <div className="text-white">
+              <span className="inline-block px-4 py-1.5 bg-white/10 backdrop-blur text-white text-xs font-bold rounded-full mb-6 uppercase tracking-widest">
+                <span className="flex items-center space-x-2">
+                  <span className="flex h-2 w-2 rounded-full bg-white animate-pulse"></span>
+                  <span>Intelligent Growth Engine</span>
+                </span>
               </span>
-            </div>
 
-            <h1 className="text-5xl lg:text-7xl font-extrabold leading-[1.1] text-slate-900 dark:text-white">
-              AI-Powered Digital Growth for{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent-indigo">
-                2026 Businesses
-              </span>
-            </h1>
+              <h1 className="text-5xl lg:text-7xl font-extrabold leading-[1.1] mb-8">
+                AI-Powered Digital Growth for{" "}
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent-indigo">
+                  2026 Businesses
+                </span>
+              </h1>
 
-            <h2 className="text-2xl lg:text-3xl font-semibold text-slate-700 dark:text-slate-300 mb-8  inline-block pb-2">
-              Marketing. Automation. Intelligence. Results.
-            </h2>
+              <h2 className="text-2xl lg:text-3xl font-semibold text-slate-200 mb-8 inline-block pb-2">
+                Marketing. Automation. Intelligence. Results.
+              </h2>
 
-            <div
-              className="relative h-20 flex overflow-hidden"
-              onMouseEnter={() => setIsHovered(true)}
-              onMouseLeave={() => setIsHovered(false)}
-            >
-              {slides.map((slide, index) => (
-                <p
-                  key={index}
-                  className={`
-                absolute text-xl text-slate-600 dark:text-slate-400 max-w-xl mx-auto
+              <div
+                className="relative h-20 flex overflow-hidden mb-10"
+                onMouseEnter={() => setIsHovered(true)}
+                onMouseLeave={() => setIsHovered(false)}
+              >
+                {slides.map((slide, index) => (
+                  <p
+                    key={index}
+                    className={`
+                absolute text-xl text-slate-200 max-w-xl mx-auto
                 transition-all duration-700 ease-in-out transform
                 ${
                   index === currentSlide
@@ -276,27 +283,34 @@ const Home = () => {
                     : "opacity-0 translate-y-8"
                 }
               `}
-                >
-                  {slide}
-                </p>
-              ))}
+                  >
+                    {slide}
+                  </p>
+                ))}
+              </div>
+
+              <div className="flex flex-row gap-4">
+                <Link to="/contact-us">
+                  <Button variant="primary" size="xl">
+                    Book a Free AI Growth Consultation
+                  </Button>
+                </Link>
+
+                <a href="#services">
+                  <Button
+                    variant="secondary"
+                    className="text-primary border-white/20 hover:bg-white/10"
+                    size="xl"
+                  >
+                    Explore Our Services
+                  </Button>
+                </a>
+              </div>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Link to="/contact-us">
-                <Button size="lg" variant="primary">
-                  Book a Free AI Growth Consultation
-                </Button>
-              </Link>
-              <a href="#services">
-                <Button size="lg" variant="secondary">
-                  Explore Our Services
-                </Button>
-              </a>
-            </div>
+            {/* RIGHT SIDE EMPTY (for visual balance) */}
+            <div className="hidden lg:block"></div>
           </div>
-
-          <div className="relative hidden"></div>
         </div>
       </section>
 
