@@ -1094,7 +1094,7 @@ const IntakeForm = () => {
                         icon="send"
                         className="transform hover:-translate-y-0.5 active:translate-y-0"
                       >
-                        Send My Enquiry
+                        Get My Quote
                       </Button>
                     ) : (
                       <Button
