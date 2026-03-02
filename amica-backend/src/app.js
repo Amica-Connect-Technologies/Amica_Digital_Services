@@ -15,11 +15,11 @@ app.use(express.json());
 
 app.use("/api", emailRoutes);
 
-// Serve React build
-app.use(express.static(path.join(__dirname, "public")));
+// Serve React build — __dirname is src/, so public is one level up
+app.use(express.static(path.join(__dirname, "../public")));
 
 app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "public", "index.html"));
+  res.sendFile(path.join(__dirname, "../public", "index.html"));
 });
 
 export default app;

@@ -1,0 +1,16 @@
+{
+  "name": "amica-digital-services",
+  "version": "1.0.0",
+  "description": "Amica Digital Services — Vite/React frontend + Node/Express backend monorepo",
+  "private": true,
+  "scripts": {
+    "postinstall": "cd amica-backend && npm install",
+    "build": "node scripts/build.js",
+    "start": "cd amica-backend && node src/server.js",
+    "dev:frontend": "cd amica-frontend && npm run dev",
+    "dev:backend": "cd amica-backend && npm run dev"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}
