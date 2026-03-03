@@ -1,16 +1,25 @@
 {
-  "name": "amica-digital-services",
+  "name": "amica-backend",
   "version": "1.0.0",
-  "description": "Amica Digital Services — Vite/React frontend + Node/Express backend monorepo",
-  "private": true,
+  "main": "index.js",
+  "type": "module",
   "scripts": {
-    "postinstall": "cd amica-backend && npm install",
-    "build": "node scripts/build.js",
-    "start": "cd amica-backend && node src/server.js",
-    "dev:frontend": "cd amica-frontend && npm run dev",
-    "dev:backend": "cd amica-backend && npm run dev"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon src/server.js",
+    "start": "node src/server.js"
   },
-  "engines": {
-    "node": ">=20.0.0"
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "cors": "^2.8.6",
+    "dotenv": "^17.3.1",
+    "express": "^5.2.1",
+    "express-validator": "^7.3.1",
+    "nodemailer": "^8.0.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
   }
 }
