@@ -10,13 +10,34 @@ console.log("SMTP Config:", {
   pass: process.env.EMAIL_PASS,
 });
 
+function cleanPassword(password) {
+  if (!password) return password;
+
+  // Remove extra escaping
+  return (
+    password
+      .replace(/\\"/g, '"') // Replace \" with "
+      .replace(/\\\\/g, "\\") // Replace \\ with \
+      .replace(/\\%/g, "%") // Replace \% with %
+      .replace(/\\#/g, "#") // Replace \# with #
+      .replace(/\\\$/g, "$") // Replace \$ with $
+      .replace(/\\&/g, "&") // Replace \& with &
+      // Add any other special characters you might have
+      .replace(/\\/g, "")
+  ); // Remove any remaining backslashes
+}
+
+console.log("Raw password from env:", process.env.EMAIL_PASS);
+
+const cleanPass = cleanPassword(process.env.EMAIL_PASS);
+
 export const transporter = nodemailer.createTransport({
   host: process.env.SMTP_HOST || "smtp.titan.email",
   port: parseInt(process.env.SMTP_PORT) || 465,
   secure: true, // true for 465
   auth: {
     user: process.env.EMAIL_USER,
-    pass: process.env.EMAIL_PASS,
+    pass: cleanPass,
   },
   debug: true, // Enable debug logs
   logger: true, // Log information
