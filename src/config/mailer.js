@@ -3,12 +3,12 @@ import dotenv from "dotenv";
 
 dotenv.config();
 
-console.log("SMTP Config:", {
-  host: process.env.SMTP_HOST,
-  port: process.env.SMTP_PORT,
-  user: process.env.EMAIL_USER,
-  pass: process.env.EMAIL_PASS,
-});
+// console.log("SMTP Config:", {
+//   host: process.env.SMTP_HOST,
+//   port: process.env.SMTP_PORT,
+//   user: process.env.EMAIL_USER,
+//   pass: process.env.EMAIL_PASS,
+// });
 
 function cleanPassword(password) {
   if (!password) return password;
@@ -26,8 +26,6 @@ function cleanPassword(password) {
       .replace(/\\/g, "")
   ); // Remove any remaining backslashes
 }
-
-console.log("Raw password from env:", process.env.EMAIL_PASS);
 
 const cleanPass = cleanPassword(process.env.EMAIL_PASS);
 
@@ -59,8 +57,5 @@ transporter.verify(function (error, success) {
   } else {
     console.log("✅ Server is ready to take messages");
     console.log("SMTP Connection successful!");
-    console.log("Connected to:", process.env.SMTP_HOST);
-    console.log("Using port:", process.env.SMTP_PORT);
-    console.log("As user:", process.env.EMAIL_USER);
   }
 });
